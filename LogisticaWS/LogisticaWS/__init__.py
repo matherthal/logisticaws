@@ -6,3 +6,5 @@ from flask import Flask
 app = Flask(__name__)
 
 import LogisticaWS.views
+
+import LogisticaWS.model.distance

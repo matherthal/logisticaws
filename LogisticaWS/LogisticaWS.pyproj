@@ -27,17 +27,32 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="LogisticaWS\distance_controller.py" />
+    <Compile Include="LogisticaWS\model\distance.py" />
+    <Compile Include="LogisticaWS\model\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LogisticaWS\tests\__init__.py" />
+    <Compile Include="LogisticaWS\utils\db_utils.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LogisticaWS\utils\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="LogisticaWS\__init__.py" />
     <Compile Include="LogisticaWS\views.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LogisticaWS\" />
+    <Folder Include="LogisticaWS\model\" />
     <Folder Include="LogisticaWS\static\" />
     <Folder Include="LogisticaWS\static\content\" />
     <Folder Include="LogisticaWS\static\fonts\" />
     <Folder Include="LogisticaWS\static\scripts\" />
     <Folder Include="LogisticaWS\templates\" />
+    <Folder Include="LogisticaWS\tests\" />
+    <Folder Include="LogisticaWS\utils\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />

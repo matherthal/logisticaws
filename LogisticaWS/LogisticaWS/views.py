@@ -13,13 +13,8 @@ except ImportError:
     from io import StringIO
 import csv
 
-
-class Distance:
-    def __init__(self, origin, destination, distance):
-        self.origin = origin
-        self.destination = destination
-        self.distance = distance
-
+from LogisticaWS.model.distance import Distance
+from LogisticaWS.distance_controller import persistMap
 
 @app.route('/')
 @app.route('/home')
@@ -54,10 +49,7 @@ def about():
 @app.route('/mapa/<name>', methods = ['POST'])
 def mapa(name):
     data = str(request.data, encoding="utf-8") 
-
-    print(name)
-    print(data)
-
+    
     distances = []
 
     f = StringIO(data)
@@ -66,6 +58,4 @@ def mapa(name):
         print('\t'.join(row))
         distances.append(Distance(row[0], row[1], row[2]))
 
-    return distances
-
-
+    persistMap(distances)
